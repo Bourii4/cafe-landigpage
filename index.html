@@ -4,8 +4,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Café Rheinblick - Bonn</title>
-  <!-- Hier wird dein CSS eingebunden: -->
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800') center/cover;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #fbbf24;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+    }
+
+    .btn-primary {
+      background-color: #fbbf24;
+      color: #0f172a;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 50px 20px;
+    }
+
+    .feature-card {
+      background-color: #1e293b;
+      padding: 25px;
+      border-radius: 12px;
+      width: 280px;
+      text-align: center;
+      border: 1px solid #334155;
+    }
+
+    .feature-card h3 {
+      color: #fbbf24;
+      margin-top: 0;
+    }
+
+    .booking {
+      background-color: #1e293b;
+      max-width: 500px;
+      margin: 0 auto 50px auto;
+      padding: 30px;
+      border-radius: 16px;
+      text-align: center;
+    }
+
+    .booking form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .booking input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background-color: #0f172a;
+      color: white;
+    }
+
+    .btn-submit {
+      background-color: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 14px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
 </head>
 <body>
 
@@ -34,7 +142,7 @@
 
   <section id="reservieren" class="booking">
     <h2>Reserviere deinen Tisch</h2>
-    <form>
+    <form action="javascript:void(0);">
       <input type="text" placeholder="Dein Name" required>
       <input type="email" placeholder="Deine E-Mail" required>
       <input type="date" required>
@@ -43,7 +151,7 @@
   </section>
 
   <footer>
-    <p>© 2026 Café Rheinblick • Bonn | Webdesign von Burhan</p>
+    <p>© 2026 Café Rheinblick • Bonn | Webdesign von Bourhan</p>
   </footer>
 
 </body>
