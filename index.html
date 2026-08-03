@@ -3,158 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Café Rheinblick - Bonn</title>
-
+  <title>Café Rheinblick | Exklusive Kaffeemomente am Rhein</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --bg: #12100e;
+      --card-bg: #1c1815;
+      --accent: #d4af37; /* Elegantes Gold */
+      --text: #f4efea;
+      --text-muted: #a69f98;
+      --border: rgba(212, 175, 55, 0.2);
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: var(--bg); color: var(--text); line-height: 1.6; }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0f172a;
-      color: #f8fafc;
-    }
+    h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800') center/cover;
-      padding: 100px 20px;
-      text-align: center;
+    nav { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      padding: 25px 8%; 
+      border-bottom: 1px solid rgba(255,255,255,0.05); 
+      position: relative;
     }
+    .logo { font-size: 26px; color: var(--accent); letter-spacing: 1px; }
+    .nav-links a { color: var(--text-muted); text-decoration: none; margin-left: 25px; transition: 0.3s; font-size: 15px; }
+    .nav-links a:hover { color: var(--accent); }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      color: #fbbf24;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #cbd5e1;
-      max-width: 600px;
-      margin: 0 auto 30px auto;
-    }
-
-    .btn-primary {
-      background-color: #fbbf24;
-      color: #0f172a;
-      padding: 14px 28px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 30px;
-      display: inline-block;
-      transition: 0.3s;
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 50px 20px;
-    }
-
-    .feature-card {
-      background-color: #1e293b;
-      padding: 25px;
-      border-radius: 12px;
-      width: 280px;
-      text-align: center;
-      border: 1px solid #334155;
-    }
-
-    .feature-card h3 {
-      color: #fbbf24;
-      margin-top: 0;
-    }
-
-    .booking {
-      background-color: #1e293b;
-      max-width: 500px;
-      margin: 0 auto 50px auto;
-      padding: 30px;
-      border-radius: 16px;
-      text-align: center;
-    }
-
-    .booking form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .booking input {
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #334155;
-      background-color: #0f172a;
-      color: white;
-    }
-
-    .btn-submit {
-      background-color: #38bdf8;
-      color: #0f172a;
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      color: var(--accent);
+      background: none;
       border: none;
-      padding: 14px;
-      font-weight: bold;
-      border-radius: 8px;
       cursor: pointer;
     }
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9rem;
-      color: #64748b;
-      border-top: 1px solid #1e293b;
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        padding: 20px 0;
+        border-bottom: 1px solid var(--border);
+        z-index: 100;
+      }
+      .nav-links.active { display: flex; }
+      .nav-links a { margin: 10px 0; text-align: center; font-size: 18px; padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.05); }
     }
+
+    .hero { text-align: center; padding: 100px 20px 70px; background: radial-gradient(circle at center, #2a221b 0%, var(--bg) 70%); }
+    .hero h1 { font-size: 52px; font-weight: 700; margin-bottom: 20px; color: #fff; }
+    .hero p { color: var(--text-muted); font-size: 18px; max-width: 600px; margin: 0 auto 35px; font-style: italic; }
+    
+    .btn-gold { background: var(--accent); color: #000; font-weight: 600; padding: 14px 32px; border-radius: 30px; text-decoration: none; display: inline-block; transition: 0.3s; }
+    .btn-gold:hover { background: #ebd07b; transform: translateY(-2px); }
+
+    .section-title { text-align: center; font-size: 36px; color: var(--accent); margin-bottom: 15px; }
+    .menu-section { padding: 80px 8%; }
+    
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+    .menu-card { background: var(--card-bg); border: 1px solid var(--border); padding: 25px; border-radius: 8px; transition: 0.3s; }
+    .menu-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+    .menu-card h3 { font-size: 22px; color: #fff; margin-bottom: 8px; display: flex; justify-content: space-between; }
+    .menu-card .price { color: var(--accent); font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 600; }
+    .menu-card p { color: var(--text-muted); font-size: 14px; }
+
+    .booking-section { background: var(--card-bg); padding: 50px 8%; border-radius: 12px; max-width: 650px; margin: 0 auto 80px; border: 1px solid var(--border); }
+    .booking-form input, .booking-form select, .booking-form textarea { width: 100%; padding: 14px; margin-bottom: 15px; background: var(--bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #fff; }
+    .submit-btn { width: 100%; padding: 15px; background: var(--accent); border: none; font-weight: 700; text-transform: uppercase; cursor: pointer; border-radius: 6px; color: #000; transition: 0.3s; }
+    .submit-btn:hover { background: #ebd07b; }
+
+    footer { text-align: center; padding: 30px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size: 14px; }
   </style>
 </head>
 <body>
 
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Café Rheinblick ☕</h1>
-      <p>Der beste Spezialitätenkaffee & frische Croissants direkt am Rhein .</p>
-      <a href="#reservieren" class="btn-primary">Tisch reservieren</a>
+  <nav>
+    <div class="logo">Café Rheinblick</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#speisekarte" onclick="closeMenu()">Speisekarte</a>
+      <a href="#reservierung" onclick="closeMenu()">Tisch reservieren</a>
     </div>
+  </nav>
+
+  <header class="hero">
+    <h1>Kaffee, Kuchen & Rheinblick</h1>
+    <p>Genießen Sie handgeröstete Kaffeespezialitäten und hausgemachte Törtchen mit direktem Blick auf den Rhein.</p>
+    <a href="#reservierung" class="btn-gold">Tisch reservieren</a>
   </header>
 
-  <section class="features">
-    <div class="feature-card">
-      <h3>🌱 100% Bio</h3>
-      <p>Nachhaltig angebauter Kaffee aus fairem Handel.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🥐 Frisch gebacken</h3>
-      <p>Jeden Morgen frisch aus unserer eigenen Backstube.</p>
-    </div>
-    <div class="feature-card">
-      <h3>🌊 Rheinblick</h3>
-      <p>Genieße dein Frühstück mit bester Aussicht.</p>
+  <section id="speisekarte" class="menu-section">
+    <h2 class="section-title">Unsere Highlights</h2>
+    <p style="text-align: center; color: var(--text-muted);">Frisch zubereitet aus regionalen Zutaten.</p>
+    
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>Rheinblick Cappuccino <span class="price">4,50 €</span></h3>
+        <p>Doppelter Espresso mit samtigem Haferschaum & Bio-Kakao.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Hausgemachte Beerentorte <span class="price">5,20 €</span></h3>
+        <p>Mit frischen Waldbeeren und feiner Mascarpone-Creme.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Avocado-Lachs Bagel <span class="price">8,90 €</span></h3>
+        <p>Frisch getoasteter Bagel mit Wildlachs, Avocado und Kresse.</p>
+      </div>
     </div>
   </section>
 
-  <section id="reservieren" class="booking">
-    <h2>Reserviere deinen Tisch</h2>
-    <form action="javascript:void(0);">
-  <input type="text" placeholder="Dein Name" required>
-  <input type="email" placeholder="Deine E-Mail" required>
-  <input type="number" placeholder="Anzahl Personen (z.B. 2)" min="1" max="10" required>
-  <input type="date" required>
-  <input type="time" required>
-  <button type="submit" class="btn-submit">Jetzt anfragen</button>
-</form>
+  <section id="reservierung" class="booking-section">
+    <h2 class="section-title">Tisch Reservieren</h2>
+    <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px;">Sichern Sie sich Ihren Platz am Fenster.</p>
+    
+    <form class="booking-form" action="https://formspree.io/f/xzdnneke" method="POST">
+      <input type="text" name="name" placeholder="Ihr Name" required>
+      <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+      <input type="date" name="datum" required>
+      <select name="personen">
+        <option value="2 Personen">2 Personen</option>
+        <option value="3-4 Personen">3-4 Personen</option>
+        <option value="5+ Personen">5+ Personen</option>
+      </select>
+      <button type="submit" class="submit-btn">Kostenfrei anfragen</button>
+    </form>
   </section>
 
   <footer>
-    <p>© 2026 Café Rheinblick • | Webdesign </p>
+    <p>© 2026 Café Rheinblick • Erstellt von Bourhan</p>
   </footer>
 
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+    function closeMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.remove('active');
+    }
+  </script>
 </body>
 </html>
