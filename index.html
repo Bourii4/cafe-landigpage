@@ -9,7 +9,7 @@
     :root {
       --bg: #12100e;
       --card-bg: #1c1815;
-      --accent: #d4af37; /* Elegantes Gold */
+      --accent: #d4af37;
       --text: #f4efea;
       --text-muted: #a69f98;
       --border: rgba(212, 175, 55, 0.2);
@@ -77,7 +77,8 @@
     .menu-card p { color: var(--text-muted); font-size: 14px; }
 
     .booking-section { background: var(--card-bg); padding: 50px 8%; border-radius: 12px; max-width: 650px; margin: 0 auto 80px; border: 1px solid var(--border); }
-    .booking-form input, .booking-form select, .booking-form textarea { width: 100%; padding: 14px; margin-bottom: 15px; background: var(--bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #fff; }
+    .booking-form input, .booking-form textarea { width: 100%; padding: 14px; margin-bottom: 15px; background: var(--bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; color: #fff; }
+    .booking-form label { color: var(--text-muted); font-size: 13px; display: block; margin-bottom: 5px; }
     .submit-btn { width: 100%; padding: 15px; background: var(--accent); border: none; font-weight: 700; text-transform: uppercase; cursor: pointer; border-radius: 6px; color: #000; transition: 0.3s; }
     .submit-btn:hover { background: #ebd07b; }
 
@@ -128,12 +129,13 @@
     <form class="booking-form" action="https://formspree.io/f/xzdnneke" method="POST">
       <input type="text" name="name" placeholder="Ihr Name" required>
       <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
-      <input type="date" name="datum" required>
-      <select name="personen">
-        <option value="2 Personen">2 Personen</option>
-        <option value="3-4 Personen">3-4 Personen</option>
-        <option value="5+ Personen">5+ Personen</option>
-      </select>
+      
+      <label>Anzahl der Personen:</label>
+      <input type="number" name="personen" min="1" max="50" value="2" required>
+      
+      <label>Datum & Uhrzeit:</label>
+      <input type="datetime-local" name="termin" required>
+      
       <button type="submit" class="submit-btn">Kostenfrei anfragen</button>
     </form>
   </section>
@@ -144,12 +146,10 @@
 
   <script>
     function toggleMenu() {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.toggle('active');
+      document.getElementById('navLinks').classList.toggle('active');
     }
     function closeMenu() {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.remove('active');
+      document.getElementById('navLinks').classList.remove('active');
     }
   </script>
 </body>
